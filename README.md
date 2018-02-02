@@ -3,7 +3,7 @@ spring-cloud-config的demo
   ▪️注册中心eureka：kyle-eureka-server
   ▪️配置中心config：kyle-config-server
   ▪️配置中心调用端：kyle-cofig-client
- 配置中心服务端详解：
+ 大家想了解更多可以看我的博客：
  
 基础架构
 在动手实践了上面关于Spring Cloud Config的基础入门内容之后，在这里我们深入理解一些它是如何运作起来的。下面所示的是上一节我们构建案例的基本结构。
