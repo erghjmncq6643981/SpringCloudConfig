@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 指定工作空间，要与接口名相同，源代码没有去看，猜测应该是通过"这里的namespace.下边方法的id"来定位方法的 -->
+<mapper namespace="com.kyle.config.server.mapper.AuthoritiesMapper">
+   <!-- 开启本mapper的namespace下的二级缓存 -->
+	<!-- <cache eviction="LRU" flushInterval="100000" size="1024" readOnly="true"/> -->
+    <resultMap type="com.kyle.config.server.entity.AuthoritiesEntity" id="authoritiesMap">
+    	<!-- 定义结果类型转化器标识，才能使用类型转换器 -->
+    	<id column="id" property="id" javaType="long" jdbcType="BIGINT"/>
+    	<result column="username" property="username" javaType="string" jdbcType="VARCHAR"/>
+    	<result column="authority" property="authority" javaType="string" jdbcType="VARCHAR"/>
+    </resultMap>
+    <select id="findByUsername" parameterType="string" resultMap="authoritiesMap">
+		select id, username, authority from authorities where username = #{username}
+    </select>
+</mapper>
